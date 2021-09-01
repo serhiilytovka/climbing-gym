@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="visits_view_form" model="ir.ui.view">
+        <field name="name">visits.view.form</field>
+        <field name="model">visits</field>
+        <field name="arch" type="xml">
+            <form string="Visits">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="visits_view_list" model="ir.ui.view">
+        <field name="name">visits.view.list</field>
+        <field name="model">visits</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="user_id"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+   <record model="ir.actions.act_window" id="action_visits">
+        <field name="name">Visits</field>
+        <field name="res_model">visits</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+   <menuitem name="Visits"
+             id="visits_menu"
+             parent="gym_root_menu"
+             action="action_visits"/>
+</odoo>

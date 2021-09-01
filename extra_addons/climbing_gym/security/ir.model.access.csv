@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_climbing_gym,access_climbing_gym,climbing_gym.model_gym,base.group_user,1,1,1,1
+access_equipment,access_equipment,climbing_gym.model_equipment,base.group_user,1,1,1,1
+access_client,access_client,climbing_gym.model_client,base.group_user,1,1,1,1
+access_visits,access_visits,climbing_gym.model_visits,base.group_user,1,1,1,1
+access_visits,access_visits,climbing_gym.model_visits,base.group_user,1,1,1,1
+access_ticket,access_ticket,climbing_gym.model_ticket,base.group_user,1,1,1,1
+access_service,access_service,climbing_gym.model_service,base.group_user,1,1,1,1

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="equipment_view_form" model="ir.ui.view">
+        <field name="name">equipment.view.form</field>
+        <field name="model">equipment</field>
+        <field name="arch" type="xml">
+            <form string="Equipment">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="max_number"/>
+                        </group>
+                        <group>
+                            <field name="level"/>
+                            <field name="gym_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="equipment_view_list" model="ir.ui.view">
+        <field name="name">equipment.view.list</field>
+        <field name="model">equipment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="max_number"/>
+                <field name="level"/>
+                <field name="gym_id"/>
+            </tree>
+        </field>
+    </record>
+
+   <record model="ir.actions.act_window" id="action_equipment">
+        <field name="name">Equipment</field>
+        <field name="res_model">equipment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+   <menuitem name="Equipment"
+             id="equipment_menu"
+             parent="gym_optional_menu"
+             action="action_equipment"
+             sequence="2"/>
+</odoo>

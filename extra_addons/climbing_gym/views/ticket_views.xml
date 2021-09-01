@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ticket_view_form" model="ir.ui.view">
+        <field name="name">ticket.view.form</field>
+        <field name="model">ticket</field>
+        <field name="arch" type="xml">
+            <form string="Ticket">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="onetime_card"/>
+                            <field name="membership_card"/>
+                            <field name="date_from"/>
+                            <field name="date_due"/>
+                            <field name="visit_count"/>
+                            <field name="discount"/>
+                            <field name="price"/>
+                            <field name="service" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ticket_view_list" model="ir.ui.view">
+        <field name="name">ticket.view.list</field>
+        <field name="model">ticket</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="onetime_card"/>
+                <field name="membership_card"/>
+                <field name="date_from"/>
+                <field name="date_due"/>
+                <field name="visit_count"/>
+                <field name="discount"/>
+                <field name="price"/>
+                <field name="service" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+   <record model="ir.actions.act_window" id="action_ticket">
+        <field name="name">Ticket</field>
+        <field name="res_model">ticket</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+   <menuitem name="Ticket" id="ticket_menu"
+             parent="gym_root_menu"
+             action="action_ticket"/>
+</odoo>
